@@ -1,12 +1,122 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello World</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CricPassport Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      background: #f4f4f4;
+    }
+    h1 {
+      color: #007bff;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .checkbox-group {
+      margin-top: 0.5rem;
+    }
+    .checkbox-group label {
+      display: block;
+      font-weight: normal;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .info-link {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello World from your test site!</h1>
+  <h1>Register Your Interest</h1>
+  <p>Complete the following form to register your interest in playing international cricket.</p>
+
+  <form id="cricket-form">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="residence">Country of Residence:</label>
+    <select id="residence" name="residence" required>
+      <option value="">--Select Country--</option>
+      <option value="Australia">Australia</option>
+      <option value="India">India</option>
+      <option value="New Zealand">New Zealand</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="USA">USA</option>
+    </select>
+
+    <label for="represent">Country You Would Like to Represent:</label>
+    <select id="represent" name="represent" required onchange="updateInfoLink()">
+      <option value="">--Select Country--</option>
+      <option value="Denmark">Denmark</option>
+      <option value="Nepal">Nepal</option>
+      <option value="Scotland">Scotland</option>
+      <option value="USA">USA</option>
+    </select>
+
+    <p class="info-link" id="info-link" style="display:none;">
+      <a href="#" target="_blank" id="country-link">Click here for more information about qualification criteria for [Country]</a>
+    </p>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required />
+
+    <label for="birth-country">Country of Birth:</label>
+    <select id="birth-country" name="birth-country" required>
+      <option value="">--Select Country--</option>
+      <option value="Australia">Australia</option>
+      <option value="India">India</option>
+      <option value="New Zealand">New Zealand</option>
+      <option value="USA">USA</option>
+    </select>
+
+    <label>I qualify on the following basis…</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="basis" value="citizen" /> I am a national/citizen/passport holder of the selected country</label>
+      <label><input type="checkbox" name="basis" value="ancestry" /> I am eligible for a passport for the selected country through ancestry</label>
+      <label><input type="checkbox" name="basis" value="birth" /> I was born in the selected country</label>
+    </div>
+
+    <label for="notes">Other info that may support your eligibility:</label>
+    <textarea id="notes" name="notes" rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function updateInfoLink() {
+      const country = document.getElementById('represent').value;
+      const infoLink = document.getElementById('info-link');
+      const link = document.getElementById('country-link');
+      if (country) {
+        link.href = "https://www.google.com/search?q=" + encodeURIComponent(country + " cricket eligibility rules");
+        link.textContent = "Click here for more information about qualification criteria for " + country;
+        infoLink.style.display = "block";
+      } else {
+        infoLink.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>

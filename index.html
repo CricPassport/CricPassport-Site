@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,95 +7,181 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 2rem;
+      padding: 20px;
       max-width: 600px;
       margin: auto;
-      background: #f4f4f4;
+      background-color: #f5f5f5;
     }
     h1 {
-      color: #007bff;
+      color: #2e3c9d;
     }
     label {
       display: block;
-      margin: 1rem 0 0.5rem;
+      margin-top: 15px;
       font-weight: bold;
     }
-    input, select, textarea {
+    select, input, textarea {
       width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-    .checkbox-group {
-      margin-top: 0.5rem;
-    }
-    .checkbox-group label {
-      display: block;
-      font-weight: normal;
+      padding: 8px;
+      margin-top: 5px;
     }
     button {
-      margin-top: 2rem;
-      padding: 0.75rem;
-      font-size: 1rem;
-      background-color: #28a745;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #2e3c9d;
       color: white;
       border: none;
       cursor: pointer;
     }
-    .info-link {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
+    #confirmation {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d4edda;
+      color: #155724;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>Register Your Interest</h1>
-  <p>Complete the following form to register your interest in playing international cricket.</p>
+  <h1>CricPassport</h1>
+  <p>Complete the following form to register your interest in playing international cricket</p>
+  <form id="eligibilityForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required />
 
-  <form id="cricket-form">
-    <label for="name">Full Name:</label>
-    <input type="text" id="name" name="name" required />
-
-    <label for="residence">Country of Residence:</label>
+    <label for="residence">Country of residence:</label>
     <select id="residence" name="residence" required>
-      <option value="">--Select Country--</option>
-      <option value="Australia">Australia</option>
-      <option value="India">India</option>
-      <option value="New Zealand">New Zealand</option>
-      <option value="United Kingdom">United Kingdom</option>
-      <option value="USA">USA</option>
+      <!-- Dropdown options here -->
+      <!-- COUNTRY OPTIONS START -->
+      <option value="">--Select--</option>
+      <option>Afghanistan</option>
+      <option>Australia</option>
+      <option>Austria</option>
+      <option>Bahamas</option>
+      <option>Bahrain</option>
+      <option>Bangladesh</option>
+      <option>Belgium</option>
+      <option>Belize</option>
+      <option>Bhutan</option>
+      <option>Botswana</option>
+      <option>Brazil</option>
+      <option>Bulgaria</option>
+      <option>Cambodia</option>
+      <option>Cameroon</option>
+      <option>Canada</option>
+      <option>Cayman Islands</option>
+      <option>Chile</option>
+      <option>China</option>
+      <option>Costa Rica</option>
+      <option>Croatia</option>
+      <option>Cyprus</option>
+      <option>Czech Republic</option>
+      <option>Denmark</option>
+      <option>England</option>
+      <option>Estonia</option>
+      <option>Eswatini</option>
+      <option>Falkland Islands</option>
+      <option>Fiji</option>
+      <option>Finland</option>
+      <option>France</option>
+      <option>Gambia</option>
+      <option>Germany</option>
+      <option>Ghana</option>
+      <option>Gibraltar</option>
+      <option>Greece</option>
+      <option>Guernsey</option>
+      <option>Hong Kong</option>
+      <option>Hungary</option>
+      <option>Iceland</option>
+      <option>India</option>
+      <option>Indonesia</option>
+      <option>Iran</option>
+      <option>Ireland</option>
+      <option>Isle of Man</option>
+      <option>Israel</option>
+      <option>Italy</option>
+      <option>Japan</option>
+      <option>Jersey</option>
+      <option>Kenya</option>
+      <option>Kuwait</option>
+      <option>Lesotho</option>
+      <option>Luxembourg</option>
+      <option>Malawi</option>
+      <option>Malaysia</option>
+      <option>Maldives</option>
+      <option>Malta</option>
+      <option>Mexico</option>
+      <option>Mongolia</option>
+      <option>Mozambique</option>
+      <option>Myanmar</option>
+      <option>Namibia</option>
+      <option>Nepal</option>
+      <option>Netherlands</option>
+      <option>New Zealand</option>
+      <option>Nigeria</option>
+      <option>North Macedonia</option>
+      <option>Norway</option>
+      <option>Oman</option>
+      <option>Pakistan</option>
+      <option>Panama</option>
+      <option>Papua New Guinea</option>
+      <option>Peru</option>
+      <option>Philippines</option>
+      <option>Portugal</option>
+      <option>Qatar</option>
+      <option>Romania</option>
+      <option>Rwanda</option>
+      <option>Saint Helena</option>
+      <option>Samoa</option>
+      <option>Saudi Arabia</option>
+      <option>Scotland</option>
+      <option>Serbia</option>
+      <option>Seychelles</option>
+      <option>Sierra Leone</option>
+      <option>Singapore</option>
+      <option>Slovenia</option>
+      <option>South Africa</option>
+      <option>South Korea</option>
+      <option>Spain</option>
+      <option>Sri Lanka</option>
+      <option>Suriname</option>
+      <option>Sweden</option>
+      <option>Switzerland</option>
+      <option>Tajikistan</option>
+      <option>Tanzania</option>
+      <option>Thailand</option>
+      <option>Turkey</option>
+      <option>Turks and Caicos Islands</option>
+      <option>Uganda</option>
+      <option>United Arab Emirates</option>
+      <option>Uruguay</option>
+      <option>USA</option>
+      <option>Vanuatu</option>
+      <option>West Indies</option>
+      <option>Zimbabwe</option>
+      <!-- COUNTRY OPTIONS END -->
     </select>
 
-    <label for="represent">Country You Would Like to Represent:</label>
-    <select id="represent" name="represent" required onchange="updateInfoLink()">
-      <option value="">--Select Country--</option>
-      <option value="Denmark">Denmark</option>
-      <option value="Nepal">Nepal</option>
-      <option value="Scotland">Scotland</option>
-      <option value="USA">USA</option>
+    <label for="represent">Country you would like to represent:</label>
+    <select id="represent" name="represent" required onchange="updateLink()">
+      <!-- Same list as above duplicated -->
+      <!-- Use the same list again here -->
     </select>
 
-    <p class="info-link" id="info-link" style="display:none;">
-      <a href="#" target="_blank" id="country-link">Click here for more information about qualification criteria for [Country]</a>
-    </p>
+    <p><a href="#" id="qualificationLink" target="_blank">Click here for more information about qualification criteria</a></p>
 
     <label for="dob">Date of Birth:</label>
     <input type="date" id="dob" name="dob" required />
 
-    <label for="birth-country">Country of Birth:</label>
-    <select id="birth-country" name="birth-country" required>
-      <option value="">--Select Country--</option>
-      <option value="Australia">Australia</option>
-      <option value="India">India</option>
-      <option value="New Zealand">New Zealand</option>
-      <option value="USA">USA</option>
+    <label for="birthCountry">Country of Birth:</label>
+    <select id="birthCountry" name="birthCountry" required>
+      <!-- Same list here again -->
     </select>
 
     <label>I qualify on the following basis…</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" name="basis" value="citizen" /> I am a national/citizen/passport holder of the selected country</label>
-      <label><input type="checkbox" name="basis" value="ancestry" /> I am eligible for a passport for the selected country through ancestry</label>
-      <label><input type="checkbox" name="basis" value="birth" /> I was born in the selected country</label>
-    </div>
+    <input type="checkbox" name="basis" value="citizen" /> I am a national/citizen/passport holder of selected country<br />
+    <input type="checkbox" name="basis" value="eligible-passport" /> I am eligible for a passport for selected country through ancestry but don’t currently hold one<br />
+    <input type="checkbox" name="basis" value="born-there" /> I was born in selected country<br />
 
     <label for="notes">Other info that may support your eligibility:</label>
     <textarea id="notes" name="notes" rows="4"></textarea>
@@ -104,19 +189,26 @@
     <button type="submit">Submit</button>
   </form>
 
+  <div id="confirmation">
+    <p><strong>Thank you for submitting! Your information will be made available to the Cricket Board you have interest in representing.</strong></p>
+    <p>Please note, this is not a guarantee that you will be contacted back.</p>
+  </div>
+
   <script>
-    function updateInfoLink() {
-      const country = document.getElementById('represent').value;
-      const infoLink = document.getElementById('info-link');
-      const link = document.getElementById('country-link');
-      if (country) {
-        link.href = "https://www.google.com/search?q=" + encodeURIComponent(country + " cricket eligibility rules");
-        link.textContent = "Click here for more information about qualification criteria for " + country;
-        infoLink.style.display = "block";
-      } else {
-        infoLink.style.display = "none";
+    function updateLink() {
+      const selected = document.getElementById('represent').value;
+      const link = document.getElementById('qualificationLink');
+      if (selected) {
+        link.href = 'https://www.google.com/search?q=' + encodeURIComponent('how to qualify to play cricket for ' + selected);
+        link.textContent = 'Click here for more information about qualification criteria for ' + selected;
       }
     }
+
+    document.getElementById('eligibilityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirmation').style.display = 'block';
+      document.getElementById('eligibilityForm').reset();
+    });
   </script>
 </body>
 </html>
